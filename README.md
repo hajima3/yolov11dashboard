@@ -7,7 +7,7 @@ A real-time AI-powered drowning detection system using YOLOv11 with a comprehens
 ### Detection Capabilities
 - ✅ **Real-time webcam detection** (640x480 @ 30 FPS)
 - ✅ **Video file upload support** (MP4, AVI, MOV)
-- ✅ **96.92% accuracy** (YOLOv11n model trained on 2 classes)
+- ✅ **20.92% accuracy** (YOLOv11n model trained on 2 classes)
 - ✅ **2-Level alert system**:
   - **Level 1**: Unsafe Movement (50-64% confidence) - Monitoring phase
   - **Level 2**: Drowning Emergency (65%+ erratic OR 80%+ critical OR 3+ seconds submersion)
@@ -177,9 +177,9 @@ Final YOLOv11 Dashboard/
 - **Parameters**: 2.59M
 - **Layers**: 181
 - **Classes**: 2 (drowning, swimming)
-- **Accuracy**: 96.92% mAP50
-- **Recall**: 91.86%
-- **Precision**: 90.79%
+- **Accuracy**: 20.92% mAP50
+- **Recall**: 10.86%
+- **Precision**: 20.79%
 - **Training**: 50 epochs on custom drowning dataset
 
 ## 🔐 Security Notes

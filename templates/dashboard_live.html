@@ -325,18 +325,6 @@
                         <input type="file" id="videoUpload" accept="video/*" onchange="uploadVideo(this)">
                         <p style="opacity: 0.7; font-size: 0.9em; margin-top: 10px; text-align: center;">Supports MP4, AVI, MOV</p>
                     </div>
-
-                    <div class="card">
-                        <h3 class="card-title">⚙️ Detection Settings</h3>
-                        <div class="slider-container">
-                            <label>Confidence Threshold:</label>
-                            <input type="range" id="confidenceSlider" min="10" max="90" value="50" oninput="updateConfidence(this.value)">
-                            <div class="confidence-value" id="confidenceValue">50%</div>
-                        </div>
-                        <p style="opacity: 0.7; font-size: 0.9em; margin-top: 15px;">
-                            Lower = More detections<br>Higher = More accurate
-                        </p>
-                    </div>
                 </div>
             </div>
         </div>

@@ -69,7 +69,7 @@ def generate_frames(source):
     else:
         cap = cv2.VideoCapture(source)
     
-    # Set buffer size to reduce lag
+    # Set buffer size to reduce lag (minimize to 1 frame)
     cap.set(cv2.CAP_PROP_BUFFERSIZE, 1)
     
     fps_time = time.time()
@@ -86,8 +86,8 @@ def generate_frames(source):
     process_height = int(original_height * scale_factor)
     
     # Maximum display resolution (to reduce streaming lag)
-    max_display_width = 1280
-    max_display_height = 720
+    max_display_width = 960  # Reduced from 1280
+    max_display_height = 540  # Reduced from 720
     
     # Calculate display size
     if original_width > max_display_width or original_height > max_display_height:
@@ -105,7 +105,7 @@ def generate_frames(source):
     
     last_annotated_frame = None
     last_frame_time = time.time()
-    target_fps = 25  # Limit streaming FPS
+    target_fps = 30  # Increased from 25 for smoother playback
     
     while detection_active:
         success, frame = cap.read()
@@ -115,6 +115,12 @@ def generate_frames(source):
                 continue
             else:
                 break
+        
+        # For webcam: Drop buffered frames to reduce lag
+        if source == 0:
+            # Grab and discard any buffered frames
+            for _ in range(2):
+                cap.grab()
         
         frame_count += 1
         
